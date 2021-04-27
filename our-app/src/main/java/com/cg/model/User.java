@@ -42,6 +42,7 @@ public class User {
 	@JoinColumn(name = "user_profile_id", referencedColumnName = "id")
 	private UserProfile userProfile;
 	
+	/* getters and setters*/
 
 	public Long getUserId() {
 		return userId;
