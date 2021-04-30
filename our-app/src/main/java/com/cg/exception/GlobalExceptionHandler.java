@@ -14,7 +14,7 @@ public class GlobalExceptionHandler {
 		ExceptionResponse er = new ExceptionResponse();
 		er.setErroeCode(HttpStatus.NOT_FOUND.value());
 		er.setErrorMessage(ex.getMessage());
-		return new ResponseEntity<ExceptionResponse>(er,HttpStatus.OK);
+		return new ResponseEntity<>(er,HttpStatus.OK);
 	}
 	
 	@ExceptionHandler(UserAlreadyExistsException.class)
@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
 		ExceptionResponse er = new ExceptionResponse();
 		er.setErroeCode(HttpStatus.NOT_FOUND.value());
 		er.setErrorMessage(ex.getMessage());
-		return new ResponseEntity<ExceptionResponse>(er,HttpStatus.OK);
+		return new ResponseEntity<>(er,HttpStatus.OK);
 	}
 	
 	

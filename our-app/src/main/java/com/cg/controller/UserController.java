@@ -26,7 +26,7 @@ public class UserController {
 
 
 	@PostMapping("/register")
-	public User registerUser(@RequestBody User user) throws UserAlreadyExistsException, UserNotFoundException {
+	public User registerUser(@RequestBody User user) throws UserAlreadyExistsException{
 		try {
 		User user1 = userService.findByEmailId(user.getEmailId());
 		if(user1==null) {
@@ -63,13 +63,13 @@ public class UserController {
 	}
 
 	@GetMapping("/{email_id}")
-	public ResponseEntity<User> findByEmailId(@PathVariable(value= "email_id") String emailId) throws UserNotFoundException {
+	public ResponseEntity<User> findByEmailId(@PathVariable(value= "email_id") String emailId){
 		User user = userService.findByEmailId(emailId);
 		return ResponseEntity.ok().body(user);
 	}
 
 	@PutMapping("/update/{email_id}")
-	public ResponseEntity<User> updatePassword(@PathVariable(value = "email_id") String emailId, @RequestBody String password) throws UserNotFoundException {
+	public ResponseEntity<User> updatePassword(@PathVariable(value = "email_id") String emailId, @RequestBody String password) {
 		User u = userService.findByEmailId(emailId);
 		u.setPassword(password);
 		User updatedUser = userService.updatePassword(u);

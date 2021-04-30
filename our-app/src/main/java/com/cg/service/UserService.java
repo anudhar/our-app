@@ -2,9 +2,6 @@ package com.cg.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.cg.exception.UserAlreadyExistsException;
-import com.cg.exception.UserNotFoundException;
 import com.cg.model.User;
 import com.cg.repository.UserRepository;
 
@@ -24,15 +21,15 @@ public class UserService{
 	}
 
 
-	public User registerUser(User user) throws UserAlreadyExistsException{
+	public User registerUser(User user){
 		return userRepo.save(user);
 	}
 
-	public User updatePassword(User user) throws UserNotFoundException {
+	public User updatePassword(User user) {
 		return userRepo.save(user);
 	}
 
-	public User findByEmailId(String emailId) throws UserNotFoundException {
+	public User findByEmailId(String emailId) {
 		return userRepo.findByEmailId(emailId);
 	}
 

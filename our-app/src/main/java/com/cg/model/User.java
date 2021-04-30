@@ -121,11 +121,9 @@ public class User {
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public User(String username2, String password2, Object object) {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
